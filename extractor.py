@@ -26,11 +26,13 @@ class EnhancedMetaExtractor:
             base_headers.update({'User-Agent': 'Twitterbot/1.0'})
         elif platform == 'whatsapp':
             base_headers.update({'User-Agent': 'WhatsApp/2.23.24.70'})
+        elif platform == 'bot':
+            base_headers.update({'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'})
         
         return base_headers
     
     def fetch_meta_data(self, url):
-        platforms = ['whatsapp', 'facebook', 'twitter']
+        platforms = ['whatsapp', 'facebook', 'twitter', 'bot']
         
         for platform in platforms:
             try:
